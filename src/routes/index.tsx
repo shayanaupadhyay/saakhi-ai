@@ -1,29 +1,29 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { ChatWindow } from "@/components/sakhi/ChatWindow";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "SakhiAI — Meesho Shopping Assistant" },
+      {
+        name: "description",
+        content:
+          "SakhiAI: Meesho's AI shopping buddy. Hinglish, Hindi ya English mein puchein — best products laati hoon!",
+      },
+      { property: "og:title", content: "SakhiAI — Meesho Shopping Assistant" },
+      {
+        property: "og:description",
+        content: "Hinglish shopping assistant for Meesho. Occasion batao, budget batao.",
+      },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="min-h-screen bg-gradient-to-b from-accent/40 to-background">
+      <ChatWindow />
+    </main>
   );
 }
