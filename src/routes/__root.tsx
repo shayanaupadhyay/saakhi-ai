@@ -11,7 +11,6 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
   return (
@@ -79,13 +78,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { name: "description", content: "Saakhi AI is an AI shopping assistant for Indian shoppers, using Hinglish, Hindi, or English." },
       { name: "author", content: "Lovable" },
       { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:description", content: "Saakhi AI is an AI shopping assistant for Indian shoppers, using Hinglish, Hindi, or English." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Lovable App" },
+      { name: "twitter:description", content: "Saakhi AI is an AI shopping assistant for Indian shoppers, using Hinglish, Hindi, or English." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f508e7d0-a68f-4f53-aa8a-00ca4d9d005d/id-preview-9d15d163--121a9cf7-61dc-49e6-b3b9-63c50d71144d.lovable.app-1780141996985.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f508e7d0-a68f-4f53-aa8a-00ca4d9d005d/id-preview-9d15d163--121a9cf7-61dc-49e6-b3b9-63c50d71144d.lovable.app-1780141996985.png" },
     ],
     links: [
       {
@@ -121,7 +124,6 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
-      <Toaster position="top-center" />
     </QueryClientProvider>
   );
 }
